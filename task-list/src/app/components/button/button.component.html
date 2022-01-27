@@ -1,0 +1,11 @@
+<button 
+    class='btn' 
+    [ngStyle]="{'background-color':color}"
+    (click)="onClick()"
+>
+    {{text}}
+</button>
+<!--Esto es todo informacion que viaja en un solo sentido
+del template al componente, del componente al template 
+del header component al controlador del boton component, y del controlador del boton component
+al template del component-->
