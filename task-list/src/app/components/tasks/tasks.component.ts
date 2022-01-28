@@ -14,8 +14,10 @@ export class TasksComponent implements OnInit {
     private taskService: TaskService
   ) { }
   
-  ngOnInit(): void { //cuando se monte el componente
-    this.tasks = this.taskService.getTasks();
+  ngOnInit(): void { //cuando se monte el componente, como una promesa
+    this.taskService.getTasks().subscribe((tasks)=>{
+      this.tasks = tasks
+    });
   }
 
 }
