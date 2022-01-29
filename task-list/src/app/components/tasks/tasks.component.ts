@@ -19,5 +19,20 @@ export class TasksComponent implements OnInit {
       this.tasks = tasks
     });
   }
-
+  deleteTask(task:Task){
+    this.taskService.deleteTask(task)
+    .subscribe(()=>{
+      this.tasks = this.tasks.filter ( (t) => {
+        
+        return t.id !== task.id
+      })
+    })
+  }
+  toggleReminder(task: Task){
+    task.reminder = !task.reminder
+    //Una vez que ya le cambie el valor al reminder se la paso al servicio para que la actualice en la BD
+    //la logica la manejo en el componente y luego le paso al servicio la tarea ya actualizada para que la guarde
+    //el servicio solo habla con la BD. la logica se maneja en el componente
+    this.taskService.updateTaskReminder(task).subscribe();
+  }
 }
