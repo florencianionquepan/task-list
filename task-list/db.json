@@ -4,31 +4,25 @@
       "id": 1,
       "text": "Finish first Angular unit",
       "day": "30/01/21",
-      "reminder": false
+      "reminder": true
     },
     {
       "id": 2,
       "text": "take a walk",
       "day": "28/01/21",
-      "reminder": false
+      "reminder": true
     },
     {
       "id": 3,
-      "text": "Finish first Angular unit",
-      "day": "30/01/21",
-      "reminder": false
-    },
-    {
-      "id": 4,
-      "text": "take a walk",
-      "day": "28/01/21",
-      "reminder": false
-    },
-    {
-      "id": 5,
       "text": "make ice-cream",
       "day": "01/02/21",
       "reminder": false
+    },
+    {
+      "text": "play with my cat",
+      "day": "today",
+      "reminder": true,
+      "id": 4
     }
   ]
 }

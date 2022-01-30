@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { TaskService } from '../../service/task.service';
 import {Task} from '../../task'
+import { AddTaskComponent } from '../add-task/add-task.component';
 
 @Component({
   selector: 'app-tasks',
@@ -34,5 +35,11 @@ export class TasksComponent implements OnInit {
     //la logica la manejo en el componente y luego le paso al servicio la tarea ya actualizada para que la guarde
     //el servicio solo habla con la BD. la logica se maneja en el componente
     this.taskService.updateTaskReminder(task).subscribe();
+  }
+
+  addTask(task:Task){
+    this.taskService.addTask(task).subscribe((task)=>{
+      this.tasks.push(task);
+    })
   }
 }
